@@ -14,8 +14,11 @@ def filter_by_state(list_of_dict: list[dict], state="EXECUTED") -> list[dict]:
     return filtered_list_of_dict
 
 
-def sort_by_date(list_of_dict: list[dict], sorting_method="Reverse=True"):
-    sorted_list_of_dict = []
+def sort_by_date(list_of_dict: list[dict], sorting_method="Убывание"):
+    if sorting_method == "Убывание":
+        sorted_list_of_dict = sorted(list_of_dict, key=lambda x: x["date"], reverse=True)
+    if sorting_method == "Возрастание":
+        sorted_list_of_dict = sorted(list_of_dict, key=lambda x: x["date"])
 
 
     print(sorted_list_of_dict)
